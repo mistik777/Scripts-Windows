@@ -2,7 +2,7 @@
 # Definicion de redes Wi-Fi (SSID y contraseñas)
 $wifiNetworks = @{
     "Wifi-1"      = 'ContraseñadeWifi-1'
-    "Wifi-2"   = 'ContraseñadeWifi-1'
+    "Wifi-2"   = 'ContraseñadeWifi-2'
 }
 
 # Mostrar las opciones de SSID
