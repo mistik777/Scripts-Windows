@@ -1,6 +1,7 @@
+# Define ruta donde se van a guardar los perfiles (por defecto el escritorio)
 $outputPath = "$env:USERPROFILE\Desktop\WiFiProfiles.xml"
 
-# Exportar todos los perfiles Wi-Fi a un archivo XML
+# Exportar todos los perfiles Wi-Fi a un archivo XML con la clave sin encriptar
 netsh wlan export profile folder="$env:USERPROFILE\Desktop" key=clear
 
 Write-Host "Perfiles Wi-Fi exportados a: $outputPath" -ForegroundColor Cyan
