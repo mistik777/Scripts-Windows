@@ -2,13 +2,15 @@
 
 Este repositorio contiene scripts en diferentes lenguajes (como PowerShell, Batch y otros) diseñados para facilitar tareas en entornos Windows. Algunos ejemplos de los scripts disponibles:
 
-Automatización de tareas comunes (limpieza de archivos temporales, optimización del sistema, etc.).
+- Borrar historial terminal CMD y PowerShell
+- Eliminar Bloatware de Windows
+- Establecer Wallpapel / Fondo de escritorio desde una URL
+- Exportar Wifis a las que se ha conectado un equipo
+- Mostrar Wifis y conectar automaticamente
+- Ordenar ficheros por años
+- Descargar e instalar programas por winget con confirmación
+- ...
 
-Gestión de redes y conexiones.
-
-Manejo de archivos y carpetas.
-
-Administración de procesos y servicios.
 
 ## 📦Requisitos
 
