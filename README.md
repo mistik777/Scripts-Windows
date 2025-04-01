@@ -5,6 +5,7 @@ Este repositorio contiene scripts en diferentes lenguajes (como PowerShell, Batc
 - Borrar historial terminal CMD y PowerShell
 - Eliminar Bloatware de Windows
 - Establecer Wallpapel / Fondo de escritorio desde una URL
+- Descargar los wallpaper / Fondos de escritorio de "Contenido destacado de Windows"
 - Exportar Wifis a las que se ha conectado un equipo
 - Mostrar Wifis y conectar automaticamente
 - Ordenar ficheros por años
