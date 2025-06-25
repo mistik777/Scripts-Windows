@@ -3,35 +3,36 @@
 #Crear acceso directo a este script con parámetros
 #Parámetros C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\Users\TU-USUARIO\actualizacion-sw-silenciosa-al-inicio.ps1"
 
+Start-Transcript -Path "$env:LOCALAPPDATA\winget-update-log.txt" -Append
 
+Write-Output ""
+Write-Output "--- Iniciando actualización con winget ---"
+Write-Output ""
+
+if (Get-Command winget -ErrorAction SilentlyContinue) {
+    try {
+        winget upgrade --all --silent --accept-source-agreements --accept-package-agreements
+        Write-Output ""
+        Write-Output "Actualización finalizada correctamente."
+    } catch {
+        Write-Output ""
+        Write-Output "Error durante la actualización: $($_.Exception.Message)"
+    }
+} else {
+    Write-Output ""
+    Write-Output "El comando 'winget' no está disponible en este sistema."
+}
+
+Stop-Transcript
+
+# Mostrar mensaje al finalizar
 Add-Type -AssemblyName PresentationFramework
-
-# Mostrar ventana de confirmación
-$resultado = [System.Windows.MessageBox]::Show(
-    "¿Deseas actualizar el software del sistema?",
-    "Actualización del Sistema",
-    "YesNo",
-    "Question"
+[System.Windows.MessageBox]::Show(
+    "YA PUEDES CERRAR ESTA VENTANA",
+    "Actualización finalizada",
+    [System.Windows.MessageBoxButton]::OK,
+    [System.Windows.MessageBoxImage]::Information
 )
 
-if ($resultado -eq "Yes") {
-    Start-Transcript -Path "$env:LOCALAPPDATA\winget-update-log.txt" -Append
-    Write-Output "Iniciando actualización de software con winget..."
-
-    # Ejecutar actualización silenciosa
-    winget upgrade --all --silent --accept-source-agreements --accept-package-agreements
-
-    Write-Output "Actualización completada."
-    Stop-Transcript
-
-    # Mensaje final
-    [System.Windows.MessageBox]::Show(
-        "Se ha actualizado el software. Ya puedes cerrar esta ventana.",
-        "Actualización finalizada",
-        "OK",
-        "Information"
-    )
-} else {
-    Write-Output "Actualización cancelada por el usuario."
-    exit
-}
+# Cerrar la terminal
+exit
