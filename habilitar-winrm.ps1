@@ -1,4 +1,4 @@
-```powershell
+# Ejecutar en powershell
 # Verificar si el script se ejecuta como administrador
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Write-Warning "Este script debe ejecutarse como administrador."
